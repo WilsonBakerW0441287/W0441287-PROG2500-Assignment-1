@@ -28,6 +28,7 @@ namespace Assignment1
         public MainWindow()
         {
             InitializeComponent();
+            //setting default states of elements
             isPlaying = false;
             btnTagSave.IsEnabled = false;
             btnEditTags.IsEnabled = false;
@@ -38,6 +39,7 @@ namespace Assignment1
 
             myMediaElement.LoadedBehavior = MediaState.Manual;
         }
+        //command bindings
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = (myMediaElement.Source != null);
@@ -69,15 +71,15 @@ namespace Assignment1
             myMediaElement.Stop();
             isPlaying = false;
         }
+        //instead of the command to open a file I opted to make a button click similar to the example from class
         private void btnFileChoice_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDLG = new OpenFileDialog();
             fileDLG.Filter = "MP3-Files|*.mp3|WMA-Files|*.wma";
-            //showdialog method shows the user a file choosing dialog box
-            //if true than the user selected a file
-            if (fileDLG.ShowDialog() == true) //this is technincally error handling
+            //if there is a file selected the value is true
+            if (fileDLG.ShowDialog() == true) //this is 1 step in error handling
             {
-                //set the current file to the file the user selected
+                //set the taglib file to the file the user selected
                 file = TagLib.File.Create(fileDLG.FileName);
                 //set the text of the label to the name of the file
                 lblSongInfo.Content = file.Tag.Title + "\n" + file.Tag.Album + "\n" + file.Tag.Year + "\n" + file.Tag.AlbumArtists[0];
@@ -156,19 +158,25 @@ namespace Assignment1
             {
                 if (file != null)
                 {
+                    //set the values on the file to the new values the user enters
                     file.Tag.Title = txtSongName.Text;
                     file.Tag.Album = txtAlbumName.Text;
                     file.Tag.Year = Convert.ToUInt32(txtYear.Text);
                     if (txtSongName.Text == "" || txtAlbumName.Text == "" || txtYear.Text == "")
                     {
+                        //make sure that the text isn't empty
                         MessageBox.Show("Please fill in all fields");
                     }
                     else
                     {
+                        //this is a silly little thing, The file can't be saved if we are activly using it
                         myMediaElement.Source = null;
+                        //after setting the source to null the system needs to process the file closing before we can save it
                         Thread.Sleep(100);
                         file.Save();
+                        //update the label info
                         lblSongInfo.Content = file.Tag.Title + "\n" + file.Tag.Album + "\n" + file.Tag.Year;
+                        //stop displaying the edit screen
                         spEditScreen.Visibility = Visibility.Hidden;
                     }
                 }
