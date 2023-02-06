@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="600">
+        Title="MainWindow" Height="550" Width="600"
+        Background="CadetBlue">
     <Window.CommandBindings>
         <CommandBinding Command="MediaCommands.Play" 
                         CanExecute="Play_CanExecute" 
@@ -74,7 +75,7 @@
                 Command=""
                 Click="btnEditTags_Click"/>
 
-        <Label x:Name="lblSongInfo" Visibility="Hidden" Grid.Column="4" Content="Label" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,34,0,-34"/>
+        <Label x:Name="lblSongInfo" Visibility="Hidden" Grid.Column="4" Content="Label" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,-34"/>
 
         <StackPanel x:Name="spEditScreen" Visibility="Hidden" Margin="0,0,17,75" Opacity="0.75" Background="#7C000000" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="3">
             <TextBlock Text="Tag Editor" FontSize="22" FontWeight="Bold" Margin="10,10,10,10" Foreground="White" />

@@ -91,7 +91,8 @@ namespace Assignment1
                     //set the image source to the image in the file
                     //using fileDLG get the NAME of the file ONLY
                     NameOfFileNoExtention = System.IO.Path.GetFileNameWithoutExtension(fileDLG.FileName);
-                    imgAbulmCover.Source = new BitmapImage(new Uri(NameOfFileNoExtention + ".png"));
+                    imgAbulmCover.Source = new BitmapImage(
+                        new Uri("E:\\IT programming LAST SEM\\Windows programming\\Assignment1Github\\W0441287-PROG2500-Assignment-1\\W0441287Assignment1\\Mp3s\\" + NameOfFileNoExtention + ".png"));
                 }
                 catch (Exception)
                 {
@@ -164,6 +165,8 @@ namespace Assignment1
                     }
                     else
                     {
+                        myMediaElement.Source = null;
+                        Thread.Sleep(100);
                         file.Save();
                         lblSongInfo.Content = file.Tag.Title + "\n" + file.Tag.Album + "\n" + file.Tag.Year;
                         spEditScreen.Visibility = Visibility.Hidden;

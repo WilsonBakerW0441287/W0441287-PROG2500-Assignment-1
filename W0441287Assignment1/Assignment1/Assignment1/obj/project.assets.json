@@ -47,11 +47,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\IT programming LAST SEM\\Windows programming\\W0441287Assignment1\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectUniqueName": "E:\\IT programming LAST SEM\\Windows programming\\Assignment1Github\\W0441287-PROG2500-Assignment-1\\W0441287Assignment1\\Assignment1\\Assignment1\\Assignment1.csproj",
       "projectName": "Assignment1",
-      "projectPath": "E:\\IT programming LAST SEM\\Windows programming\\W0441287Assignment1\\Assignment1\\Assignment1\\Assignment1.csproj",
+      "projectPath": "E:\\IT programming LAST SEM\\Windows programming\\Assignment1Github\\W0441287-PROG2500-Assignment-1\\W0441287Assignment1\\Assignment1\\Assignment1\\Assignment1.csproj",
       "packagesPath": "C:\\Users\\wlhba\\.nuget\\packages\\",
-      "outputPath": "E:\\IT programming LAST SEM\\Windows programming\\W0441287Assignment1\\Assignment1\\Assignment1\\obj\\",
+      "outputPath": "E:\\IT programming LAST SEM\\Windows programming\\Assignment1Github\\W0441287-PROG2500-Assignment-1\\W0441287Assignment1\\Assignment1\\Assignment1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wlhba\\AppData\\Roaming\\NuGet\\NuGet.Config",
